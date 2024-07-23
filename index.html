@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Carousel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=IM+Fell+English+SC&display=swap"
+    rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="./index.css">
+
+  <style>
+    .maincontainer {
+      position: relative;
+      height: 250px;
+      width: 500px;
+      margin-right: 5rem;
+    }
+
+    .thecard {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: all 0.5s ease;
+      background-color: antiquewhite;
+    }
+
+    .thecard:hover {
+      transform: rotateY(180deg);
+    }
+
+    .frontside {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSPmZkWFRUq97lniiHGmFrp2t4hS5_I67kiQ&s);
+    }
+
+    .backside {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      backface-visibility: hidden;
+      background-color: #CAF0F8;
+      transform: rotateY(180deg);
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- logo  -->
+  <section style="height: 100%; width: 100%; display: flex;flex-direction: row;background-color: rgb(243, 247, 247);">
+    <img src="logo.jpg" class="logo bg-dark">
+    <div class="con" style="background-color: white; height: 46px; width:20%; text-align: left; padding: 10px;">
+      THE DAILY PULSE</div>
+    <!-- logo ends -->
+    <!-- navbar -->
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link  text-dark " style=" font-family: PT Serif, serif;" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link  text-dark " style=" font-family: PT Serif, serif;" href="#">Trending</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link  text-dark " style=" font-family: PT Serif, serif;" href="#">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link  text-dark " style=" font-family: PT Serif, serif;" href="#">Login</a>
+      </li>
+
+      <!-- categories dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle  text-dark " style=" font-family: PT Serif, serif;" data-bs-toggle="dropdown"
+          href="#" role="button" aria-expanded="false">Categories</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Regional</a></li>
+          <li><a class="dropdown-item" href="#">Politics</a></li>
+          <li><a class="dropdown-item" href="#">Business</a></li>
+          <!-- <li><hr class="dropdown-divider"></li> -->
+          <li><a class="dropdown-item" href="#">Health</a></li>
+          <li><a class="dropdown-item" href="#">Sports</a></li>
+          <li><a class="dropdown-item" href="#">Lifestyle</a></li>
+          <li><a class="dropdown-item" href="#">Entertainment</a></li>
+        </ul>
+      </li>
+      <!-- categories dropdown -->
+      <!-- social media dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle  text-dark " style=" font-family: PT Serif, serif;" data-bs-toggle="dropdown"
+          href="#" role="button" aria-expanded="false">Social Media</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Instagram</a></li>
+          <li><a class="dropdown-item" href="#">Twitter</a></li>
+          <li><a class="dropdown-item" href="#">Fackbook</a></li>
+          <!-- <li><hr class="dropdown-divider"></li> -->
+        </ul>
+      </li>
+    
+    </ul>
+    <!-- social media dropdown -->
+    <!-- navbar ends -->
+    <!-- search -->
+    <form class="d-flex ms-4">
+      <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+
+  </section>
+  <!-- search -->
+  <!-- list items -->
+  <section class="conatiner-section d-flex flex-row justify-content-evenly "
+    style="height: 70px; width: 100%; background-color: rgb(184, 178, 178);">
+    <img style="border-radius: 50%; height: 50px; width: 60px;" class="mt-2"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm4J3vzu1s0Ua9Ae7UuCdUlDf0dT0V8bf20A&s" alt="">
+    <p class=" para text-light p-3 fs-5">Regional</p>
+    <img style="border-radius: 50%; height: 50px; width: 60px;" class="mt-2"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzJIp1qm1VWxAJ8Hm239AMOpl6_tftd3bNsQ&s" alt="">
+    <p class=" para text-light p-3 fs-5">Politics</p>
+    <img style="border-radius: 50%; height: 50px; width: 60px;" class="mt-2"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRynCQsl198RF3-wo8nrVkEyxO45NIDMVCmbA&s" alt="">
+    <p class=" para text-light p-3 fs-5">Lifestyle</p>
+    <img style="border-radius: 50%; height: 50px; width: 60px;" class="mt-2"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREUyOXK1Nx-KQC7UVuLEqW13SUvVWVMPbmWA&s" alt="">
+  </section>
+  <!-- list items ends-->
+
+  <!-- top hits -->
+  <div class="text-center text-dark mt-4  fs-2 fst-italic" style=" font-family: Abril Fatface, serif;">Top Hits</div>
+  <section style="height: 85vh; width: 100% ;">
+    <div class="container1" style="display: flex; flex-direction: row;">
+      <div class="col p-5">
+        <div class="anim">
+          <p style=" color:rgb(233, 237, 239); padding:183px 10px 0px 2px;font-weight: bold;font-family: Domine, serif">
+            The world at their feet, lakhs queuing on
+            the streets of Mumbai for them and thousands more packing the stands
+            of Wankhede Stadium -- the site of their 2011 World Cup triumph and where the 2007 T20 World Cup winning
+            side
+            held a similar celebration.
+          </p>
+        </div>
+      </div>
+
+      <div class="row1">
+        <div>
+          <ul style="list-style: none;">
+            <li style="padding: .5rem;"><img style="height: 8rem;width: 15rem;"
+                src="https://images.indianexpress.com/2024/06/Love-vs.-Law-The-fight-for-marriage-equality-remains-a-challenge-for-LGBTQ-individuals-in-India-as-many-resist-the-legal-recognition-of-same-sex-marriage-citing-cultural-and-traditional-norms-as.jpg?w=270"
+                alt=""></li>
+            <li style="padding: .3rem;"><img style="height: 8rem;width: 15rem;"
+                src="https://images.indianexpress.com/2024/06/heart-health-pexels-1.jpg?w=450" alt=""></li>
+            <li style="padding: .3rem;"><img style="height: 8rem;width: 15rem;"
+                src="https://images.indianexpress.com/2020/04/Flamingo-trending-3.jpg?w=270" alt=""></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row1">
+        <div>
+          <ul style="list-style: none;">
+            <li>
+              <p style="font-family: Domine, serif; font-size:12px; padding: 9px;">Lavender marriages in India: A
+                compromise of love and identityAs India celebrates Pride Month, take a look at how societal norms push
+                LGBTQ+ individuals towards marriages of convenience and the fight for true equality.</p>
+            </li>
+            <li style="padding-top: 50px;">
+              <p style="font-family: Domine, serif; font-size:12px;">Cancer patients exposed to air pollution at higher
+                risk of heart disease, death:The researchers found that exposure to fine particulate pollution weakened
+                the body's detoxification and its defences against inflammation, which are risk factors to cancer.</p>
+            </li>
+            <li style="padding-top: 50px;">
+              <p style="font-family: Domine, serif; font-size:12px;">Greater flamingos paint MMR pink with record
+                numbers this yearFlamingos brighten up the day in Navi Mumbai during Covid-19 lockdown The team was
+                among the 15 that conducted population estimation in Gosabara, Kuchhadi-Javar, Medha creek and Amipur on
+                Saturday </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </section>
+  <!-- tophits end -->
+
+  <div class="text-center text-dark mt-4  fs-2 fst-italic" style=" font-family: Abril Fatface, serif;">Sports</div>
+<section class="d-flex flex-row justify-content-evenly" style="background-color: #f1e8df; height: 60vh;">
+  <div class="card2 mt-4">
+    <div class="card-image2"><img style="height: 130px;width: 100%;object-fit: cover;" src="https://images.indianexpress.com/2024/07/IND-W-Asia.jpg?w=316" alt=""></div>
+    <div class="heading"> <a href="www.google.com">Women's Asia Cup: No major surprises as India name 15-member squad led by Harmanpreet Kaur
+    </a> </div>
+</div>
+
+<div class="card2  mt-4">
+  <div class="card-image2"><img style="height: 130px;width: 100%;object-fit: cover;" src="https://images.indianexpress.com/2024/07/Euro-football.jpg?w=316" alt=""></div>
+  <div class="heading">  <a href="#">Public backlash, fans’ ire, incessant social media abuse and mental trauma of extreme levels</a>
+  </div>
+
+</div>
+
+<div class="card2  mt-4">
+  <div class="card-image2"><img style="height: 130px;width: 100%;object-fit: cover;" src="https://images.indianexpress.com/2024/07/P-V-Sindhu-with-the-members-of-her-entourage-in-Germanys-Saarbrucken-town.-Instagram.jpg?resize=1536,864" alt=""></div>
+  <div class="heading">  <a href="#">Temporary house in Germany, special horse feed: How Olympic cell paved road to Paris</a>
+  </div>
+
+</div>
+
+<div class="card2  mt-4">
+  <div class="card-image2"><img style="height: 130px;width: 100%;object-fit: cover;" src="https://images.indianexpress.com/2024/07/New-Project-2024-07-07T191817.255.jpg?resize=1536,864" alt=""></div>
+  <div class="heading"><a href="#">‘You did it for me and Marcus Rashford’: Sancho praises Saka for shootout redemption in Euro</a> 
+</div>
+</section>
+  </section>
+  <!-- sports ends -->
+  <!-- entertainment  -->
+  <div class=" business text-center fs-2 mt-2 fst-italic" style="font-family: Abril Fatface, serif; padding: 10px;">
+    Entertainment</div>
+  <section style=" height: 100%; width: 100%; padding: 10px;"
+    class="d-flex flex-row justify-content-evenly">
+    <div class="container mt-2 pt-3">
+      <div class=" ms-4 card1"><img style="  width: 150px;  height: 200px; object-fit: cover;"
+          src="https://images.indianexpress.com/2013/12/pankaj-tripathi-mirzapur-300.jpg" alt=""></div>
+      <div class=" card"><img style=" width: 150px;  height: 200px; object-fit: cover;"
+          src="https://images.indianexpress.com/2024/06/Munjya_a16771.jpg?resize=1536,864" alt=""></div>
+      <div class=" card"><img style=" width: 150px;  height: 200px; object-fit: cover;"
+          src="https://images.indianexpress.com/2024/07/mirzapur-1600.jpeg?resize=1536,864" alt=""></div>
+      <div class=" card"><img style=" width: 150px;  height: 200px; object-fit: cover;"
+          src="https://images.indianexpress.com/2024/07/Poulomi-Das-on-Bigg-Boss-OTT-3-eviction-Armaan-Malik-marriage.jpg?resize=1536,864"
+          alt=""></div>
+      <div class=" card"><img style=" width: 150px;  height: 200px; object-fit: cover;"
+          src="https://images.indianexpress.com/2024/06/Venom-The-Last-Dance-trailer-out.jpg?resize=1536,864" alt="">
+      </div>
+      <div class=" card"><img style=" width: 150px;  height: 200px; object-fit: cover;"
+          src="https://images.indianexpress.com/2024/05/Untitled-design-10-9.jpg?resize=1536,864" alt="">
+      </div>
+
+    </div>
+
+    <div class="maincontainer">
+      <div class="thecard">
+        <div class="frontside text-dark">
+        </div>
+        <div class="backside">
+          <p style="margin-top:60px">Boruto reveals that he has been learning from Kakashi and uses one of his iconic
+            techniques in the latest chapter of Boruto: Two Blue Vortex.</p><button class="button2"
+          >Read
+            More</button>
+        </div>
+      </div>
+    </div>
+    </div>
+   
+  </section>
+  <!-- entertainment ends -->
+
+
+  <section class="footer" style=" height:  30vh; width: 100%; background-color:#CAF0F8; margin-top: 30px;">
+    <div style="color: #003459;font-family: IM Fell English SC, serif;font-size:1.5rem; padding: 50px;"
+      class="text-center">"Breaking News: <br>Local Cat Declares Itself Mayor, Demands Extra Treats and Naps on Public
+      Property!"</div>
+<!-- cards -->
+    <div class="text-center text-dark mt-4  fs-2 fst-italic" style="font-family: Abril Fatface, serif;"> YOUR TOPICS</div>
+    <section style="padding-top: 55px; margin-left: 20px; display: flex;flex-direction: row;justify-content: space-evenly;">
+      <div class="card1" style="width: 18rem; border: 1px solid grey; margin: 10px;">
+        <div class="card-header text-dark text-center fw-bold" style="background-color: #BCCADB">
+          Robotics
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"style="background-color: #BCCADB">Robotics Market is Expected to Reach a High Valuation of USD 152.9 Billion by 2033
+          </li>
+          <li class="list-group-item"style="background-color: #BCCADB">Is Tesla An AI Robotics Company? Possibly</li>
+          <li class="list-group-item"style="background-color: #BCCADB;">Incessant rainfall triggers landslides in Uttarakhand, Himachal; Char Dham yatra suspended</li>
+        </ul>
+      </div>
+
+      <div class="card1" style="width: 18rem; border: 1px solid grey; margin: 10px;">
+        <div class="card-header text-dark text-center fw-bold"style="background-color: #BCCADB">
+          Art and Design
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"style="background-color: #BCCADB"> Barbie’s fantastic life in plastic is picked apart at the Design Museum</li>
+          <li class="list-group-item"style="background-color: #BCCADB">Taylor Swift’s cat painting pops up in New York museum show</li>
+          <li class="list-group-item"style="background-color: #BCCADB;">Incessantthe rainfall triggers of landslides in Uttarakhand, and India Himachal; Char Dham yatra suspended</li>
+        </ul>
+      </div>
+
+      <div class="card1" style="width: 18rem; border: 1px solid grey; margin: 10px;">
+        <div class="card-header text-dark text-center fw-bold"style="background-color: #BCCADB;">
+          Science
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"style="background-color: #BCCADB">Strange observations of galaxies challenge ideas about dark matter</li>
+          <li class="list-group-item"style="background-color: #BCCADB">Advanced nuclear reactors need a different type of uranium. Here’s 4 things to know </li>
+          <li class="list-group-item"style="background-color: #BCCADB;">Three killed in wall collapse, 150 rescued from waterfall as heavy rains hit Goa</li>
+        </ul>
+      </div>
+      </div>
+
+
+    </section>
+    <section style="padding-bottom: 55px; margin-left: 20px; display: flex;flex-direction: row;">
+      <div class="card1" style="width: 18rem; border: 1px solid grey; margin: 10px;">
+        <div class="card-header text-dark text-center fw-bold"style="background-color: #BCCADB">
+          India
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"style="background-color: #BCCADB">Incessant rainfall triggers landslides in Uttarakhand, Himachal; Char Dham yatra suspended
+          </li>
+          <li class="list-group-item"style="background-color: #BCCADB">Three killed in wall collapse, 150 rescued from waterfall as heavy rains hit Goa</li>
+          <li class="list-group-item"style="background-color: #BCCADB">Commerce scraps 259 show cause notices to patent officers: ‘Not in line with procedure’</li>
+        </ul>
+      </div>
+
+      <div class="card1" style="width: 18rem; border: 1px solid grey; margin: 10px;">
+        <div class="card-header text-dark text-center fw-bold"style="background-color: #BCCADB">
+       Regional
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"style="background-color: #BCCADB">Assam: Flood-related deaths in the state reached 66</li>
+          <li class="list-group-item"style="background-color: #BCCADB">Maharashtra: Flood-Like Situation Arose In Sindhudurg And Ratnagiri Districts Due To Heavy Rainfall</li>
+          <li class="list-group-item"style="background-color: #BCCADB;padding:20px">Security forces killed six terrorists in twin encounters in Kulgam district, J&K</li>
+        </ul>
+      </div>
+
+      <div class="card1" style="width: 18rem; border: 1px solid grey; margin: 10px;">
+        <div class="card-header text-dark text-center fw-bold"style="background-color: #BCCADB">
+          Politics
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"style="background-color: #BCCADB">Disney heiress, others donors to 'withhold funding' as Biden continues poll bid</li>
+          <li class="list-group-item"style="background-color: #BCCADB">'He will realise what big mistake he made...' Eknath Shinde attacks Thackeray</li>
+          <li class="list-group-item"style="background-color: #BCCADB;padding:20px">This Trump supporter helped crush the UK’s Conservative Party</li>
+        </ul>
+      </div>
+
+
+      <div class="card1" style="width: 18rem; border: 1px solid grey; margin: 10px;">
+        <div class="card-header text-dark text-center fw-bold"style="background-color: #BCCADB">
+          Opinion
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"style="background-color: #BCCADB"> What Sanjay Leela Bhansali’s films have that other Bollywood films don’t</li>
+          <li class="list-group-item"style="background-color: #BCCADB"> Sanjay Leela Bhansali focuses on women — he just doesn’t understand them</li>
+          <li class="list-group-item"style="background-color: #BCCADB;padding:20px">Design dealers set the tone at Tefaf New York</li>
+        </ul>
+      </div>
+      </div>
+    </section>
+    <section class="pt-5">
+      <div class=" text-dark fs-2 text-center pt-3" style=" font-family: PT Serif, serif;background-color: #D7D5E6;">
+        Latest Stories</div>
+      <div class="footerr " style="background-color: #D7D5E6;">
+
+        <div style="background-color: #D7D5E6;">
+          <ul style="padding: 30px;">
+            <li class="text-secondary p-2">Natasa Stankovic Hints She’s ‘Going Through A Situation’ Amid Divorce Rumours
+              With Hardik Pandya: ‘We Get Sad And Lost’</li>
+            <li class="text-secondary p-2">NCLT Order Cryptic, Unreasoned: Karnataka HC While Setting Aside Order
+              Restraining Byju’s Second Rights Issue</li>
+            <li class="text-secondary p-2">Indian Cricket Team Arrives At Delhi Airport With T20 World Cup Trophy,
+              Videos Of Grand Welcome Go Viral</li>
+            <li class="text-secondary p-2">Kalki 2898 AD Box Office Collection Day 7: Prabhas-Starrer Becomes Second
+              Highest Hindi Grosser Of 2024, Surpasses Rs 700 Crore Mark Worldwide</li>
+          </ul>
+        </div>
+
+
+        <div style="border-left:1px dotted rgb(206, 201, 201)">
+          <ul style="padding: 30px;">
+            <li class="text-secondary p-2">UK Election Live Updates: Will Rishi Sunak Be Able To Fend Off Keir Starmer
+              Challenge? Britain Goes To Polls Toda</li>
+            <li class="text-secondary p-2">Man Shoots Girlfriend, Kills Self In Kolkata Guest House: Police</li>
+            <li class="text-secondary p-2">Jaishankar Holds Talks With China’s Wang Yi: ‘Agreed To Redouble Efforts To
+              Resolve Issues In Border Areas’</li>
+            <li class="text-secondary p-2">As He Meets PM Modi, Chandrababu Naidu To Seek Packages Under 2014 AP Act,
+              Not Special Status</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="background" style="height: 90vh; width: 100%;">
+      <div class="video-container">
+        <video autoplay muted loop class="background-video">
+            <source src="newspaper.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="content">
+          <p style=" font-family: Abril Fatface, serif; font-size:2rem;text-align: center; margin-top: 20px;">Subscribe to uor Exclusive news</p>
+        </div>
+   
+<div class="background-grid" style="display: grid; grid-template-columns: 1fr 1fr 1fr; padding-left:70px;">
+    <div class="plan">
+      <div class="inner">
+        <span class="pricing">
+          <span>
+            149 <small>/-</small>
+          </span>
+        </span>
+        <p class="title">Basic</p>
+        <p class="info">Good Video Quality in<br> SD(480p)</p>
+        <ul class="features">
+          <li>
+            <span class="icon">
+              <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+              </svg>
+            </span>
+            <span><strong>20</strong>Watch ad-free on any phone 0r tablet</span>
+          </li>
+          <li>
+            <span class="icon">
+              <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+              </svg>
+            </span>
+            <span>Plan <strong>Rs.149/month</strong></span>
+          </li>
+          <li>
+            <span class="icon">
+              <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+              </svg>
+            </span>
+            <span>Download on 1 Device</span>
+          </li>
+        </ul>
+        <div class="action">
+        <a class="button" href="#">
+          Choose plan
+        </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="plan">
+      <div class="inner">
+        <span class="pricing">
+          <span>
+            199 <small>/-</small>
+          </span>
+        </span>
+        <p class="title">Standard</p>
+        <p class="info">Great video plan in Full HD(1080p)</p>
+        <ul class="features">
+          <li>
+            <span class="icon">
+              <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+              </svg>
+            </span>
+            <span>Watch ad-free on any phone,tablet,computer or Tv</span>
+          </li>
+          <li>
+            <span class="icon">
+              <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+              </svg>
+            </span>
+            <span>Plan <strong>Rs.499/month</strong></span>
+          </li>
+          <li>
+            <span class="icon">
+              <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+              </svg>
+            </span>
+            <span>Dowmload on 2 Devices.</span>
+          </li>
+        </ul>
+        <div class="action">
+        <a class="button" href="#">
+          Choose plan
+        </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="plan">
+      <div class="inner">
+        <span class="pricing">
+          <span>
+            649<small>/-</small>
+          </span>
+        </span>
+        <p class="title">Professional</p>
+        <p class="info">Our best video Quality in Ultra HD(4k)</p>
+        <ul class="features">
+          <li>
+            <span class="icon">
+              <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+              </svg>
+            </span>
+            <span>Watch ad-free on any phone,tablet,computer or Tv</span>
+          </li>
+          <li>
+            <span class="icon">
+              <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+              </svg>
+            </span>
+            <span>Plan <strong>Rs.649/month</strong></span>
+          </li>
+          <li>
+            <span class="icon">
+              <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+              </svg>
+            </span>
+            <span>Dowmload on 6 devices</span>
+          </li>
+        </ul>
+        <div class="action">
+        <a class="button" href="#">
+          Choose plan
+        </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </section>
+    
+      <section>
+      <div class="footerrr" style="background-color: #D7D5E6;">
+        <div style="border-left:1px dotted rgb(206, 201, 201) ; padding: 50px;">
+          <ul>
+            <li class="text-secondary">Latest News</li>
+            <li class="text-secondary">Health And Wellness</li>
+            <li class="text-secondary">Education News</li>
+            <li class="text-secondary">Buy All-Access Plan</li>
+            <ul>
+              <li class="text-secondary"> Entertainment News</li>
+              <li class="text-secondary"> Trending News</li>
+              <li class="text-secondary"> Political News</li>
+              <li class="text-secondary">Business News</li>
+              <li class="text-secondary">Why Subscribe Indian Express</li>
+            </ul>
+          </ul>
+
+        </div>
+        <div>
+          <h6 style="margin-top: 70px;">Copyright © 2024 The Indian Express [P] Ltd. All Rights Reserved</h6>
+          <h5 class="p-3" style="border-bottom:1px dotted white"> Download</h5>
+          <img class="ios ms-2" style="height: 40px;width: 50px;"
+            src="https://indianexpress.com/wp-content/themes/indianexpress/images/icons/icon-android.svg" alt="">
+          <img class="ios" style="height: 40px;width: 50px;"
+            src="https://indianexpress.com/wp-content/themes/indianexpress/images/icons/icon-apple.svg" alt="">
+        </div>
+      </div>
+
+
+    </section>
+
+
+
+
+</body>
+
+</html>
